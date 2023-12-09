@@ -11,11 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import mongoengine
-from hotel_server.config import db_name, hostname, username, pwd
 import os
-
-mongoengine.connect(db=db_name, host=hostname, username=username, password=pwd)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
