@@ -10,8 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-from pathlib import Path
+from dotenv import load_dotenv
 import os
+from pathlib import Path
+
+load_dotenv()
+CONNECTION_STRING = os.getenv('CONNECTION_STRING')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-e3(7n621cc7oc)h(h%!q$ecppae5#@6v0_&kehh8*ew!^vm16j'
+SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -86,8 +91,7 @@ DATABASES = {
         'NAME': 'default_db',
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
-            'host': 'mongodb://gen_user:I~SoHB%5D1Txm%3AG%7B@85.92.111.61:27'
-                    '017/default_db?authSource=admin&directConnection=true'
+            'host': CONNECTION_STRING
         }
     }
 }
