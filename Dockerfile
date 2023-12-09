@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 8000
 
-ENTRYPOINT gunicorn hotel_server.wsgi
+ENTRYPOINT gunicorn --bind 0.0.0.0:8000 hotel_server.wsgi
