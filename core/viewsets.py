@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from utils import client
+from .utils import client
 
 
 class Test1ViewSet(APIView):

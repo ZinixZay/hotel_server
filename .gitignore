@@ -1,2 +1,3 @@
 /venv
 /hotel_server/.env
+/core/utils.py
